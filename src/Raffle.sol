@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: SEE THE LICENSE IN LICENSE
+// SPDX-License-Identifier: MIT
 
 pragma solidity 0.8.30;
 

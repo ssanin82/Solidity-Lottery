@@ -8,12 +8,12 @@ import {VRFCoordinatorV2_5Mock} from "@chainlink/contracts/src/v0.8/vrf/mocks/VR
 abstract contract CodeConstants {
     uint96 public constant MOCK_BASE_FEE = 0.25 ether;
     uint96 public constant MOCK_GAS_PRICE_LINK = 1e9;
-    uint256 public constant MOCK_WEI_PER_UNIT_LINK = 4e15;
+    int256 public constant MOCK_WEI_PER_UNIT_LINK = 4e15;
     uint256 public constant ETH_SEPOLIA_CHAIN_ID = 1115511;
     uint256 public constant LOCAL_CHAIN_ID = 31337;
 }
 
-contract HelperCofig is CodeConstants, Script {
+contract HelperConfig is CodeConstants, Script {
     error HelperCongig__InvalidChainId();
 
     struct NetworkConfig {
@@ -43,7 +43,7 @@ contract HelperCofig is CodeConstants, Script {
     }
 
     function getConfig() public returns(NetworkConfig memory) {
-        return getConfigByChainId(block.chainId);
+        return getConfigByChainId(block.chainid);
     }
 
     function getSepoliaEthConfig() public pure returns(NetworkConfig memory) {
@@ -51,7 +51,7 @@ contract HelperCofig is CodeConstants, Script {
             entranceFee: 0.01 ether,
             interval: 30,
             vrfCoordinator: 0x5CE8D5A2BC84beb22a398CCA51996F7930313D61,
-            gasLine: 0x1770bdc7eec7771f7ba4ffd640f34260d7f095b79c92d34a5b2551d6f6cfd2be,
+            gasLane: 0x1770bdc7eec7771f7ba4ffd640f34260d7f095b79c92d34a5b2551d6f6cfd2be,
             subscriptionId: 0,
             callbackGasLimit: 500000
         });
@@ -70,7 +70,7 @@ contract HelperCofig is CodeConstants, Script {
             entranceFee: 0.01 ether,
             interval: 30,
             vrfCoordinator: address(vrfCoordinatorMock),
-            gasLine: 0x1770bdc7eec7771f7ba4ffd640f34260d7f095b79c92d34a5b2551d6f6cfd2be, // doesn't matter
+            gasLane: 0x1770bdc7eec7771f7ba4ffd640f34260d7f095b79c92d34a5b2551d6f6cfd2be, // doesn't matter
             subscriptionId: 0,
             callbackGasLimit: 500000
         });

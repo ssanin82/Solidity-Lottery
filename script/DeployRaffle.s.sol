@@ -10,7 +10,7 @@ contract DeployRaffle is Script {
     function run() public {}
 
     function deployContract() public returns (Raffle, HelperConfig) {
-        HelperCofig helperConfig = new HelperCofig();
+        HelperConfig helperConfig = new HelperConfig();
         HelperConfig.NetworkConfig memory config = helperConfig.getConfig();
         vm.startBroadcast();
         Raffle raffle = new Raffle(
