@@ -10,7 +10,7 @@ abstract contract CodeConstants {
     uint96 public constant MOCK_BASE_FEE = 0.25 ether;
     uint96 public constant MOCK_GAS_PRICE_LINK = 1e9;
     int256 public constant MOCK_WEI_PER_UNIT_LINK = 4e15;
-    uint256 public constant ETH_SEPOLIA_CHAIN_ID = 1115511;
+    uint256 public constant ETH_SEPOLIA_CHAIN_ID = 11155111;
     uint256 public constant LOCAL_CHAIN_ID = 31337;
 }
 
@@ -54,9 +54,9 @@ contract HelperConfig is CodeConstants, Script {
             interval: 30,
             vrfCoordinator: 0x5CE8D5A2BC84beb22a398CCA51996F7930313D61,
             gasLane: 0x1770bdc7eec7771f7ba4ffd640f34260d7f095b79c92d34a5b2551d6f6cfd2be,
-            subscriptionId: 0,
+            subscriptionId: 107439202414081373046306541513253761321795159035551512918985995783832312077375,
             callbackGasLimit: 500000,
-            link: 0x514910771AF9Ca656af840dff83E8264EcF986CA
+            link: 0x779877A7B0D9E8603169DdbD7836e478b4624789
         });
     }
 
