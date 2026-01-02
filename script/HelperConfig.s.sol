@@ -25,6 +25,7 @@ contract HelperConfig is CodeConstants, Script {
         uint256 subscriptionId;
         uint32 callbackGasLimit;
         address link;
+        address account;
     }
 
     NetworkConfig public localNetworkConfig;
@@ -52,11 +53,12 @@ contract HelperConfig is CodeConstants, Script {
         return NetworkConfig({
             entranceFee: 0.01 ether,
             interval: 30,
-            vrfCoordinator: 0x5CE8D5A2BC84beb22a398CCA51996F7930313D61,
+            vrfCoordinator: 0x9DdfaCa8183c41ad55329BdeeD9F6A8d53168B1B,
             gasLane: 0x1770bdc7eec7771f7ba4ffd640f34260d7f095b79c92d34a5b2551d6f6cfd2be,
             subscriptionId: 107439202414081373046306541513253761321795159035551512918985995783832312077375,
             callbackGasLimit: 500000,
-            link: 0x779877A7B0D9E8603169DdbD7836e478b4624789
+            link: 0x779877A7B0D9E8603169DdbD7836e478b4624789,
+            account: 0x0788D37594a375C571404D99C089Bc90ef5A90D3
         });
     }
 
@@ -77,7 +79,8 @@ contract HelperConfig is CodeConstants, Script {
             gasLane: 0x1770bdc7eec7771f7ba4ffd640f34260d7f095b79c92d34a5b2551d6f6cfd2be, // doesn't matter
             subscriptionId: 0,
             callbackGasLimit: 500000,
-            link: address(linkToken)
+            link: address(linkToken),
+            account: 0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38
         });
         return localNetworkConfig;
     }
